@@ -1376,9 +1376,7 @@ start() {
         fi
 
         # The string passed to eval must handles spaces in paths correctly.
-        head /opt/constellio/./wrapper
         COMMAND_LINE="$CMDNICE \"$WRAPPER_CMD\" \"$WRAPPER_CONF\" wrapper.syslog.ident=\"$APP_NAME\" wrapper.pidfile=\"$PIDFILE\" wrapper.daemonize=FALSE $APPNAMEPROP $ANCHORPROP $IGNOREPROP $STATUSPROP $COMMANDPROP $LOCKPROP wrapper.script.version=3.5.29 $ADDITIONAL_PARA"
-        echo $COMMAND_LINE
         eval $COMMAND_LINE
     else
         eval echo `gettext '$APP_LONG_NAME is already running.'`
