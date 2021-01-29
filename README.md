@@ -11,7 +11,7 @@ Learn more on [Constellio's homepage](https://constellio.com/) homepage and in t
 
 # Getting started with the Docker image
 
-This image is dependent on the (Constellio build for Solr)[https://github.com/lracicot/docker-constellio-solr].
+This image is dependent on the [Constellio build for Solr](https://github.com/lracicot/docker-constellio-solr).
 
 ## Running Constellio
 

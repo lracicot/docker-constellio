@@ -4,14 +4,16 @@ WAITER_FILE="/opt/constellio/waitforsolr"
 CONSTELLIO_FILE="/opt/constellio/conf/constellio.properties"
 STARTUP_FILE="/opt/constellio/conf/constellio.setup.properties"
 
-[ ! -z "${SOLR_URL}" ] && sed -i "s@!SOLR_URL!@${SOLR_URL}@" $WAITER_FILE
-[ ! -z "${SOLR_URL}" ] && sed -i "s@!SOLR_URL!@${SOLR_URL}@" $CONSTELLIO_FILE
-[ ! -z "${ADMIN_SERVICE_KEY}" ] && sed -i "s@!ADMIN_SERVICE_KEY!@${ADMIN_SERVICE_KEY}@" $STARTUP_FILE
-[ ! -z "${ADMIN_PASSWORD}" ] && sed -i "s@!ADMIN_PASSWORD!@${ADMIN_PASSWORD}@" $STARTUP_FILE
-
-if [ -d $CONF_DIR ]
+if [ ! -d $CONF_DIR ]
 then
+  echo "Initializing fresh Constellio instance."
     mv /opt/constellio/default-conf $CONF_DIR
+
+    [ ! -z "${SOLR_URL}" ] && sed -i "s@!SOLR_URL!@${SOLR_URL}@" $WAITER_FILE
+    [ ! -z "${SOLR_URL}" ] && sed -i "s@!SOLR_URL!@${SOLR_URL}@" $CONSTELLIO_FILE
+    [ ! -z "${ADMIN_SERVICE_KEY}" ] && sed -i "s@!ADMIN_SERVICE_KEY!@${ADMIN_SERVICE_KEY}@" $STARTUP_FILE
+    [ ! -z "${ADMIN_PASSWORD}" ] && sed -i "s@!ADMIN_PASSWORD!@${ADMIN_PASSWORD}@" $STARTUP_FILE
+    echo "Done"
 fi
 
 exec "$@"
