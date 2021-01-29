@@ -3,11 +3,12 @@ CONF_DIR="/opt/constellio/conf"
 WAITER_FILE="/opt/constellio/waitforsolr"
 CONSTELLIO_FILE="/opt/constellio/conf/constellio.properties"
 STARTUP_FILE="/opt/constellio/conf/constellio.setup.properties"
+WRAPPER_FILE="/opt/constellio/conf/wrapper.conf"
 
-if [ ! -d $CONF_DIR ]
+if [ ! -f $WRAPPER_FILE ]
 then
   echo "Initializing fresh Constellio instance."
-    mv /opt/constellio/default-conf $CONF_DIR
+    mv /opt/constellio/default-conf/* $CONF_DIR
 
     [ ! -z "${SOLR_URL}" ] && sed -i "s@!SOLR_URL!@${SOLR_URL}@" $WAITER_FILE
     [ ! -z "${SOLR_URL}" ] && sed -i "s@!SOLR_URL!@${SOLR_URL}@" $CONSTELLIO_FILE
