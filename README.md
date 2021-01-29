@@ -70,7 +70,7 @@ volumes:
 
 # Contribute
 
-This is not an official Constellio image. This image is provided as-is, is maintained by a volunteer and does not offer any warranty. If you find any bugs or want to improve it, feel free to open an issue and/or submit a PR on GitHub.
+This is not an official Constellio image. This image is provided as-is, is maintained by a volunteer and does not provide any warranty. Use it at your own risk. If you find any bugs or want to improve it, feel free to open an issue and/or submit a PR on GitHub.
 
 For official support and hosting, visit the [Constellio website](https://constellio.com/).
 
