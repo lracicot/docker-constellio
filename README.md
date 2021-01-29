@@ -16,10 +16,10 @@ This image is dependent on the [Constellio build for Solr](https://github.com/lr
 ## Running Constellio
 
 ```bash
-$ export ADMIN_SERVICE_KEY=adminkey
-$ export ADMIN_PASSWORD=password
-$ export SOLR_URL=http://solr-server-address:8983/solr
-$ docker run -d -p 80:8080 --name constellio -e SOLR_URL=$SOLR_URL -e ADMIN_SERVICE_KEY=$ADMIN_SERVICE_KEY -e ADMIN_PASSWORD=$ADMIN_PASSWORD lracicot/constellio:9.1
+export ADMIN_SERVICE_KEY=adminkey
+export ADMIN_PASSWORD=password
+export SOLR_URL=http://solr-server-address:8983/solr
+docker run -d -p 80:8080 --name constellio -e SOLR_URL=$SOLR_URL -e ADMIN_SERVICE_KEY=$ADMIN_SERVICE_KEY -e ADMIN_PASSWORD=$ADMIN_PASSWORD lracicot/constellio:9.1
 
 ```
 
@@ -67,6 +67,12 @@ volumes:
   solr-events:
 
 ```
+
+# Contribute
+
+This is not an official Constellio image. This image is maintained by a volunteer. If you find any bugs or want to improve it, feel free to open an issue and/or submit a PR on GitHub.
+
+For official support and hosting, visit the [Constellio website](https://constellio.com/).
 
 # Included third party licenses
 
