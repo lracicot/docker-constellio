@@ -76,7 +76,7 @@ For official support and hosting, visit the [Constellio website](https://constel
 
 # Included third party licenses
 
-##Constellio (https://github.com/doculibre/constellio/blob/master/LICENSE.txt)
+## Constellio (https://github.com/doculibre/constellio/blob/master/LICENSE.txt)
 
 ```
 Constellio - License
